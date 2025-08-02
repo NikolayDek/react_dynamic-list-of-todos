@@ -44,7 +44,7 @@ export const App: React.FC = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
   const [query, setQuery] = useState('');
   const [selectedTodo, setSelectedTodo] = useState<Todo | null>(null);
-  const [statusSelect, setStatusSelect] = useState<Status>('all');
+  const [statusSelect, setStatusSelect] = useState<Status>(Status.all);
   // const [curre]
   const filteredTodos = getFilteredTodos(todos, query, statusSelect);
 

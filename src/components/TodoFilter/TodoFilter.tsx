@@ -52,7 +52,7 @@ export const TodoFilter: React.FC<Props> = ({
               className="delete"
               onClick={() => {
                 onQueryChange('');
-                onSelect('all');
+                onSelect(Status.all);
               }}
             />
           ) : (
