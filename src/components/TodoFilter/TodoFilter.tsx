@@ -7,6 +7,14 @@ type Props = {
   onQueryChange: (query: string) => void;
 };
 
+function parseStatus(value: string): Status {
+  if (Object.values(Status).includes(value as Status)) {
+    return value as Status;
+  }
+
+  return Status.all;
+}
+
 export const TodoFilter: React.FC<Props> = ({
   statusSelect,
   onSelect,
@@ -20,7 +28,7 @@ export const TodoFilter: React.FC<Props> = ({
           <select
             data-cy="statusSelect"
             value={statusSelect}
-            onChange={event => onSelect(event.target.value as Status)}
+            onChange={event => onSelect(parseStatus(event.target.value))}
           >
             <option value="all">All</option>
             <option value="active">Active</option>

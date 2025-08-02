@@ -12,7 +12,7 @@ import { Todo } from './types/Todo';
 import { getTodos } from './api';
 import { Status } from './types/Status';
 
-function getFilteredTodos(todos: Todo[], query: string, status: string) {
+function getFilteredTodos(todos: Todo[], query: string, status: Status) {
   let filteredTodos = [...todos];
 
   if (status) {
